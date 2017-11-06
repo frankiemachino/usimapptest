@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@index');
+
+Route::get('about', function () {
+	
+	$content = "about";
+
+    return view('page', compact('content'));
+});
+
+Route::get('contact', function () {
+
+	$content = "contact";
+
+    return view('page', compact('content'));
 });

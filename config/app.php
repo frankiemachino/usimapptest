@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'US in Made'),
 
     /*
     |--------------------------------------------------------------------------
@@ -167,7 +167,10 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Laravel\Dusk\DuskServiceProvider::class,
+        TheAbaci\UsimApi\UsimApiServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+        
         /*
          * Application Service Providers...
          */
@@ -176,6 +179,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
 
     ],
 
