@@ -7,6 +7,8 @@ pipeline {
 
 sudo chown -R jenkins:www-data storage/ bootstrap/
 
+sudo mv .env.example .env
+
 composer install
 
 name=$JOB_NAME
@@ -38,8 +40,6 @@ sudo echo "<VirtualHost *:80>
 sudo a2ensite $name2.conf
 
 sudo service apache2 reload
-
-sudo mv .env.example .env
 
 php artisan key:generate'''
       }
